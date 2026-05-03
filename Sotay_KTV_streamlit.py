@@ -10,14 +10,10 @@ def highlight_text(text):
 
     # NotOK trước (tránh bị dính chữ OK bên trong)
     html = html.replace(
-        "NotOK",
-        "<span style='color:red; font-weight:bold'>NotOK</span>"
+        "Notok",
+        "<span style='color:red; font-weight:bold'>Notok</span>"
     )
 
-    html = html.replace(
-        "Not OK",
-        "<span style='color:red; font-weight:bold'>Not OK</span>"
-    )
 
     # OK
     html = html.replace(
