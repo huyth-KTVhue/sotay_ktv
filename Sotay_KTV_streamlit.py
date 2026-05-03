@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 st.set_page_config(page_title="Sổ tay KTV", layout="wide")
-st.title("📘 SỔ TAY KTV")
+st.title("📘 SỔ TAY KTV FPT")
 
 # ===== Load file cố định =====
 FILE_PATH = "SO_TAY_KTV.xlsx"
@@ -14,15 +14,15 @@ except:
     st.error("❌ Không tìm thấy file Excel")
     st.stop()
 
-st.success("✅ Đã load dữ liệu")
+st.success("")
 
 # ===== Tìm kiếm =====
-keyword = st.text_input("🔍 Danh mục")
+keyword = st.text_input("🔍 Tìm Kiếm")
 
 if keyword:
     df = df[df["ten"].str.contains(keyword, case=False, na=False)]
 
-st.write(f"📋 Tổng danh mục: {len(df)}")
+st.write(f"📋 Danh Mục: {len(df)}")
 
 # ===== Hiển thị =====
 for i, row in df.iterrows():
