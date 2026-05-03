@@ -31,6 +31,12 @@ def highlight_text(text):
         "chốt phương án và số tiền thu nếu có",
         "<b>chốt phương án và số tiền thu nếu có</b>"
     )
+    # In đậm B1, B2, B3...
+    html = re.sub(r'\b(B\d+)\b', r'<b>\1</b>', html)
+
+    # In đậm TH1, TH2, TH3...
+    html = re.sub(r'\b(TH\d+)\b', r'<b>\1</b>', html)
+
     
     # giữ xuống dòng
     html = html.replace("\n", "<br>")
