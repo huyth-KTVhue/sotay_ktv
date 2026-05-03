@@ -27,5 +27,5 @@ st.write(f"📋 Danh Mục: {len(df)}")
 # ===== Hiển thị =====
 for i, row in df.iterrows():
     if pd.notna(row["ten"]):
-        with st.expander(f"📌 {row['ten']}"):
+        with st.expander(f"🛠 {row['ten']}"):
             st.text(row["buoc"])
