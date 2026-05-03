@@ -6,29 +6,35 @@ st.title("📘 SỔ TAY KTV FPT")
 
 # ===== Hàm tô màu =====
 def highlight_text(text):
-    lines = str(text).split("\n")
-    html = ""
+    html = str(text)
 
-    for line in lines:
-        l = line.lower()
+    # NotOK trước (tránh bị dính chữ OK bên trong)
+    html = html.replace(
+        "NotOK",
+        "<span style='color:red; font-weight:bold'>NotOK</span>"
+    )
 
-        # Ghi chú
-        if "ghi chú" in l:
-            html += f"<p style='color:#9c27b0; font-weight:bold'>📝 {line}</p>"
+    html = html.replace(
+        "Not OK",
+        "<span style='color:red; font-weight:bold'>Not OK</span>"
+    )
 
-        # NotOK
-        elif "notok" in l or "not ok" in l:
-            html += f"<p style='color:red; font-weight:bold'>❌ {line}</p>"
+    # OK
+    html = html.replace(
+        "OK",
+        "<span style='color:green; font-weight:bold'>OK</span>"
+    )
 
-        # OK
-        elif "ok" in l:
-            html += f"<p style='color:green; font-weight:bold'>✅ {line}</p>"
+    # Ghi chú
+    html = html.replace(
+        "Ghi chú",
+        "<span style='color:#9c27b0; font-weight:bold'>Ghi chú</span>"
+    )
 
-        else:
-            html += f"<p>{line}</p>"
+    # giữ xuống dòng
+    html = html.replace("\n", "<br>")
 
     return html
-
 
 # ===== Load file cố định =====
 FILE_PATH = "SO_TAY_KTV.xlsx"
