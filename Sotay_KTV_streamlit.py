@@ -26,7 +26,12 @@ def highlight_text(text):
         "Ghi chú",
         "<span style='color:#9c27b0; font-weight:bold'>Ghi chú</span>"
     )
-
+    # In đậm câu bạn yêu cầu
+    html = html.replace(
+        "chốt phương án và số tiền thu nếu có",
+        "<b>chốt phương án và số tiền thu nếu có</b>"
+    )
+    
     # giữ xuống dòng
     html = html.replace("\n", "<br>")
 
